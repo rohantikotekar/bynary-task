@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Utility Services</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Gas Utility Services</h1>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; Gas Utility Company</p>
+    </footer>
+</body>
+
+<script>
+    function validateForm() {
+      var name = document.getElementById("id_customer_name").value;
+      var email = document.getElementById("id_customer_email").value;
+      var details = document.getElementById("id_request_details").value;
+    
+      if (name === "") {
+        alert("Please enter your name");
+        return false;
+      }
+    
+      if (email === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+      }
+    
+      if (details === "") {
+        alert("Please provide details for your request");
+        return false;
+      }
+    
+      return true;
+    }
+    </script>
+    
+</html>
